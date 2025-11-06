@@ -10,7 +10,7 @@ const options = {
     "App Name": "SauceDemo Automation",
     "Test Environment": "QA",
     "Browser": "Chromium",
-    "Platform": "Windows 10",
+    "Platform": "Windows 11",
     "Executed": "Playwright + Cucumber",
   },
 };
