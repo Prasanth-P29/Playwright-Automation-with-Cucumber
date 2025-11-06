@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "test:cucumber": "cucumber-js --require-module ts-node/register --require ./step-definitions/**/*.ts --require ./support/*.ts"
+    "test:playwright": "npx playwright test",
+    "test": "npx @cucumber/cucumber --require-module ts-node/register --require ./step-definitions/**/*.ts --require ./support/*.ts --format json:./reports/cucumber_report.json",
 
-   },
+    "report": "node reporter.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.0",
+    "cucumber-html-reporter": "^7.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

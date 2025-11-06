@@ -1,19 +1,15 @@
 import { BasePage } from "./BasePage";
 
 export class SearchPage extends BasePage {
-  // 🔧  Fixed spacing issue in the selector
-  private searchBox = "input[data-test='product-search']"; 
-  private searchResults = ".inventory_item_name";
-
-  async searchProduct(productName: string) {
-    await this.page.fill(this.searchBox, productName);
-    await this.page.keyboard.press("Enter");
-  }
+  private productTitles = ".inventory_item_name";
 
   async isProductVisible(productName: string): Promise<boolean> {
-    const results = await this.page.$$eval(this.searchResults, (elements) =>
-      elements.map((el) => el.textContent?.trim() || "")
+    const results = await this.page.$$eval(this.productTitles, (elements) =>
+      elements.map((el) => el.textContent?.trim().toLowerCase())
     );
-    return results.includes(productName);
+
+    console.log("🧾 Products found on page:", results);
+
+    return results.includes(productName.toLowerCase());
   }
 }

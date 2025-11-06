@@ -1,62 +1,81 @@
-# 🎭 Playwright Automation Framework (TypeScript + POM)
+# 🧪 Playwright Automation Framework with Cucumber (BDD)
 
-This project is a structured Playwright test automation framework built with **TypeScript** using the **Page Object Model (POM)** design pattern.
-
-It automates login and product verification on [SauceDemo](https://www.saucedemo.com).
+This project demonstrates an **end-to-end Playwright automation framework integrated with Cucumber (Behavior-Driven Development)**, using the **Page Object Model (POM)** structure.  
+It includes **login** and **search** feature examples, clean folder organization, and an **HTML test report**.
 
 ---
 
 ## 📁 Folder Structure
-├── features/ # Gherkin feature files (for BDD learning)
+
+Playwright Automation with Cucumber/
+│
+├── features/
 │ ├── login.feature
-│ └── search.feature
+│ ├── search.feature
 │
-├── step-definitions/ # Step definitions (Cucumber glue code - not executed)
-│ ├── loginSteps.ts
-│ └── searchSteps.ts
-│
-├── support/ # Hooks for setup/teardown (used in Cucumber style)
-│ └── hooks.ts
-│
-├── pages/ # Page Object Model (POM) classes
+├── pages/
 │ ├── BasePage.ts
 │ ├── LoginPage.ts
-│ └── SearchPage.ts
+│ ├── SearchPage.ts
 │
-├── tests/ # Playwright test specs (executed using playwright test)
-│ ├── login.spec.ts
-│ └── search.spec.ts
+├── step-definitions/
+│ ├── loginSteps.ts
+│ ├── searchSteps.ts
 │
-├── playwright.config.ts # Playwright configuration
-├── tsconfig.json # TypeScript configuration
+├── support/
+│ ├── hooks.ts
+│
+├── reports/
+│ ├── cucumber_report.json
+│ └── generate-report.js
+│
 ├── package.json
+├── tsconfig.json
 └── README.md
 
+yaml
+Copy code
 
-### ✅ **Tech Stack**
-- **Playwright** → Browser automation & test runner  
-- **TypeScript** → Type safety and modern syntax  
-- **POM (Page Object Model)** → Reusable, clean UI interaction logic  
+---
 
-### ✅ **Concepts Used**
-- **Encapsulation of locators & actions** inside page classes  
-- **Test files only call methods**, not raw locators  
-- **Assertions** handled by Playwright’s `expect`  
+## ⚙️ Setup Instructions
 
+### 1️⃣ Install Dependencies
+Run this in your project root:
 
-⚙️ Installation & Setup
-1️⃣ Install dependencies
---> npm install
+```bash
+npm install
+If not already installed:
 
-2️⃣ Install Playwright browsers
---> npx playwright install
+bash
+Copy code
+npm install @cucumber/cucumber ts-node typescript playwright multiple-cucumber-html-reporter --save-dev
+🚀 Running the Tests
+Run Cucumber Tests
+bash
+Copy code
+npm test
+This command will:
 
-▶️ Running Tests
-Run all tests
---> npx playwright test
+Run your .feature files using Cucumber
 
-Run specific test file
---> npx playwright test tests/login.spec.ts
+Use Playwright for browser automation
 
-Run in UI mode (visual runner)
---> npx playwright test --ui
+Generate a JSON report file at reports/cucumber_report.json
+
+🧾 Generating the HTML Report
+Option 1: Run separately
+After tests complete, generate the HTML report:
+
+bash
+Copy code
+npm run report
+Option 2: Auto-generate (recommended)
+In your package.json, the test script is chained:
+
+json
+Copy code
+"scripts": {
+  "test": "npx @cucumber/cucumber --require-module ts-node/register --require ./step-definitions/**/*.ts --require ./support/*.ts --format json:./reports/cucumber_report.json && npm run report",
+  "report": "node ./reports/generate-report.js"
+}

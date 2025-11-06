@@ -1,0 +1,172 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-login;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 136901600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "step-definitions\\loginSteps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1185089500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user enters \"standard_user\" and \"secret_sauce\"",
+            "match": {
+              "location": "step-definitions\\loginSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 211640699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the user should be logged in successfully",
+            "match": {
+              "location": "step-definitions\\loginSteps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52605500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 263299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 16639899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Login",
+    "tags": [],
+    "uri": "features\\login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "search-functionality;search-for-an-existing-product",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Search for an existing product",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 80942399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the products page",
+            "match": {
+              "location": "step-definitions\\searchSteps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1040728699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user searches for \"Sauce Labs Backpack\"",
+            "match": {
+              "location": "step-definitions\\searchSteps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 971499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the product \"Sauce Labs Backpack\" should be displayed in results",
+            "match": {
+              "location": "step-definitions\\searchSteps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42744400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 430099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 16003399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "search-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Search Functionality",
+    "tags": [],
+    "uri": "features\\search.feature"
+  }
+]
