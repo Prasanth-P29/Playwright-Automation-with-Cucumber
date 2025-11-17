@@ -7,14 +7,7 @@ export class BasePage {
     await this.page.goto(url, { waitUntil: "domcontentloaded" });
   }
 
-  async getTitle() {
-    return await this.page.title();
-  }
-
-  async getTitle() {
-    return await this.page.title();
-  }
-  async getTitle() {
-    return await this.page.title();
+  async getURL() {
+    return this.page.url();
   }
 }
