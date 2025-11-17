@@ -10,4 +10,7 @@ export class BasePage {
   async getTitle() {
     return await this.page.title();
   }
+  async getURL() {
+    return this.page.url();
+  }
 }
