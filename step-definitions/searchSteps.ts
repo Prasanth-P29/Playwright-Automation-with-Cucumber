@@ -16,7 +16,7 @@ Given("the user is on the products page", async function () {
 });
 
 When("the user searches for {string}", async function (productName: string) {
-  console.log(`🔎 Simulating search product: ${productName}`);
+  console.log(`🔎 Simulating search for product: ${productName}`);
 });
 
 Then("the product {string} should be displayed in results", async function (productName: string) {
